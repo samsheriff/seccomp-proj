@@ -45,9 +45,7 @@ After a few minutes, our cluster should be ready and it can be confirmed by runn
 `kubectl get nodes`
 
 
-As for the last part of the assignment and for deploying the Python microservice on our EKS cluster, 
-
-
+And for deploying our microservices app on EKS, we'll do as follow:
 
 While working on this assignment, I constantly visited and was inspired by the following blogs, code repos, articles, etc.:
 - [Provision an EKS Cluster (AWS) by HashiCorp](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks)
