@@ -17,6 +17,20 @@ module "eks_blueprints" {
       min_size        = 2
       subnet_ids      = module.vpc.private_subnets
     }
+
+    # jenkins = {
+    #   ami_type       = var.
+    #   platform       = var.
+    #   instance_types = var.
+    #   desired.size   = var.
+    #   labels = {
+    #     Name = "jenkins-${var.}-${data.}"
+    #   }
+    #   tags = merge(var., {
+    #     "Name" = "jenkins-${var.}-${data.}"
+    #   })
+    # }
+
   }
 
   tags = local.tags
