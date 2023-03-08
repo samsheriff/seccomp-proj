@@ -7,7 +7,7 @@
 # }
 
 variable "region" {
-  default     = "eu-west-1"
+  default     = "us-west-2"
   description = "AWS region"
 }
 
@@ -19,7 +19,7 @@ resource "random_string" "suffix" {
 data "aws_availability_zones" "available" {}
 
 locals {
-  name            = "okta-jhipster-eks-${random_string.suffix.result}"
+  name            = "sam-seccomp-eks-${random_string.suffix.result}"
   region          = var.region
   cluster_version = "1.22"
   instance_types  = ["t2.large"] # can be multiple, comma separated
