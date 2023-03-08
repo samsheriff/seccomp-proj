@@ -4,7 +4,7 @@ This project deploys a Python application on a Kubernetes cluster on Amazon's AW
 The simple Python application is architected with Microservices in mind.
 
 This is the roadmap I had in mind when I started working on this assignment:
-- Write the Python application in a way that it's made of two small services that communicate through network (TCP ports).
+- Write the Python application in a way that it's made of two small services that communicate in order to send a response to user.
 - EKS Cluster, VPC, Subnets, IAM details, Networking details and etc. needs to be provisioned by Terraform on AWS
 - Deploy a Jenkins instance on an EC2 box and create a pipeline to do the k8s deployment and also the build and deployment of our microservices on the EKS cluster. This step can be done in a way to be a show-off for a DevOps engineer :) I will use Helm for Jenkins deployment (helm_release.tf) while all the configuration is already set in (jenkins_values.yaml). This was heavily inspired by Jenkins' Help Charts docs: https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins
 - Our Python application will be deployed on our EKS cluster from this Jenkins instance.
@@ -43,3 +43,17 @@ After reviewing everything and also making sure about access keys (`aws config`)
 After a few minutes, our cluster should be ready and it can be confirmed by running the following command:
 
 `kubectl get nodes`
+
+
+As for the last part of the assignment and for deploying the Python microservice on our EKS cluster, 
+
+
+
+While working on this assignment, I constantly visited and was inspired by the following blogs, code repos, articles, etc.:
+- [Provision an EKS Cluster (AWS) by HashiCorp](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks)
+- [Provisioning Kubernetes clusters on AWS with Terraform and EKS](https://learnk8s.io/terraform-eks#testing-the-cluster-by-deploying-a-simple-hello-world-app)
+* [Deploy a Kubernetes Application with Terraform and AWS EKS](https://www.clickittech.com/devops/terraform-kubernetes-deployment/)
+* _[terraform-aws-network-eks-jenkins](https://github.com/Nawter/terraform-aws-network-eks-jenkins)_ code repository
+* [Terraform — Provision Amazon EKS Cluster using Terraform](https://medium.com/devops-mojo/terraform-provision-amazon-eks-cluster-using-terraform-deploy-create-aws-eks-kubernetes-cluster-tf-4134ab22c594)
+* [Microservices CI/CD With Terraform, AWS ECS & AWS CI/CD Tools](https://dev.to/aws-heroes/microservices-ci-cd-with-terraform-aws-ecs-aws-ci-cd-tools-5hng)
+* And finally: [How to Deploy Java Microservices on Amazon EKS Using Terraform and Kubernetes](https://developer.okta.com/blog/2022/06/22/terraform-eks-microservices#create-an-eks-cluster-using-terraform)

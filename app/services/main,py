@@ -1,0 +1,19 @@
+from flask import Flask, jsonify
+from services.users import user_name
+
+app = Flask(__name__)
+
+@app.route("/")
+def index() -> str:
+    return jsonify({"response": "Yeaay!"})
+
+
+@app.route("/hello")
+def hello():
+    user_data = user_name()
+    response = {"hello": user_data}
+    return jsonify(response)
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80)
